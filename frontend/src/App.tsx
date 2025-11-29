@@ -1,18 +1,22 @@
-import FieldsList from "./components/FieldsList";
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import DashboardLayout from "./layouts/DashboardLayout";
+import FieldsPage from "./pages/FieldsPage";
+import ComplexPage from "./pages/ComplexPage";
+import ServicesPage from "./pages/ServicesPage";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <div className="p-6 max-w-xl mx-auto">
-        <h1 className="text-3xl font-bold text-blue-600">
-          Campos Deportivos
-        </h1>
-        <p className="mt-2 text-gray-600">Interfaz lista para conectar al backend.</p>
-
-        <FieldsList />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="/canchas" />} />
+          <Route path="canchas" element={<FieldsPage />} />
+          <Route path="complejo" element={<ComplexPage />} />
+          <Route path="servicios" element={<ServicesPage />} />
+          {/* Agregá más rutas según lo que necesites */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -385,16 +385,6 @@ export default function FieldsList() {
                 </div>
             )}
 
-            {/* BOTÓN AGREGAR */}
-            {!editing && !showAddForm && (
-                <button
-                    onClick={() => setShowAddForm(true)}
-                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded mb-6 font-medium"
-                >
-                    + Nueva Cancha
-                </button>
-            )}
-
             {/* FORM AGREGAR */}
             {!editing && showAddForm && (
                 <form
