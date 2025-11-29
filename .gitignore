@@ -1,0 +1,19 @@
+# Node
+node_modules
+.env
+npm-debug.log
+yarn-error.log
+.DS_Store
+
+# Frontend & build
+/frontend/node_modules
+/server/node_modules
+/dist
+/build
+
+# VSCode
+.vscode
+
+# Logs
+logs
+*.log
